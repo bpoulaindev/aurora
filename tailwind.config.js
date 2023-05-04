@@ -131,6 +131,9 @@ module.exports = {
         ...palette,
         cream: "#FFFAF5",
       },
+      fontFamily: {
+        supreme: ["Supreme", "open sans", "Arial", "serif"],
+      },
     },
   },
   plugins: [],

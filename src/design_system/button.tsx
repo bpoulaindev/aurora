@@ -61,7 +61,7 @@ export const Button: React.FC<{
     text: `focus:shadow-sm`,
   };
   const staticClasses =
-    "rounded-lg font-semibold focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2";
+    "rounded-lg flex items-center h-auto font-semibold focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2";
   const sizeClasses = {
     small: "px-1 py-1/2 text-sm",
     regular: "px-2 py-1 text-base",
@@ -70,7 +70,7 @@ export const Button: React.FC<{
   return (
     <button
       type="button"
-      className={`${staticClasses} ${colorClasses[color].global} ${colorClasses[color][variant]} ${sizeClasses[size]} ${variants[variant]} ${className}}`}
+      className={`${className} ${staticClasses} ${colorClasses[color].global} ${colorClasses[color][variant]} ${sizeClasses[size]} ${variants[variant]}}`}
     >
       {children}
     </button>
