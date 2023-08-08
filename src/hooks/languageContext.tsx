@@ -1,8 +1,8 @@
 import React, { createContext, useState } from "react";
 
 interface LanguageContextType {
-  language: string;
-  setLanguage: React.Dispatch<React.SetStateAction<string>>;
+  language: "fr" | "en";
+  setLanguage: React.Dispatch<React.SetStateAction<"fr" | "en">>;
 }
 
 export const LanguageContext = createContext<LanguageContextType>({

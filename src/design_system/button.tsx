@@ -6,12 +6,14 @@ export const Button: React.FC<{
   variant?: "contained" | "soft" | "outlined" | "text";
   color?: "indigo" | "purple" | "green" | "red" | "dark";
   size?: "small" | "regular" | "large";
+  onClick?: () => void;
 }> = ({
   className = "",
   children,
   variant = "contained",
   color = "indigo",
   size = "regular",
+  onClick,
 }) => {
   const colorClasses = {
     indigo: {
@@ -70,6 +72,7 @@ export const Button: React.FC<{
   return (
     <button
       type="button"
+      onClick={onClick}
       className={`${className} ${staticClasses} ${colorClasses[color].global} ${colorClasses[color][variant]} ${sizeClasses[size]} ${variants[variant]}}`}
     >
       {children}
