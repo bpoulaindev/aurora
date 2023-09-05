@@ -2,5 +2,11 @@
   "Home.subtitle": "Baptiste Poulain -- Développeur Fullstack/Frontend",
   "Home.title": "Créateur d'expériences utilisateurs \n <0>fluides et intuitives.</0>",
   "Navbar.resume": "Mon CV",
-  "Onboarding.title.2": "<0>Des parcours</0> sur \nmesure, pensés par \ndes lillois <0>(des vrais)</0>"
+  "Onboarding.title.2": "<0>Des parcours</0> sur \nmesure, pensés par \ndes lillois <0>(des vrais)</0>",
+  "Showcase.w3d.date": "Août 2021 - Août 2023",
+  "Showcase.w3d.title": "<0>WeLoveDevs</0> - Développeur Web",
+  "Showcase.w3d.description": "Pendant deux ans chez WeLoveDevs, j'ai plongé dans le développement en explorant <0>l'UI/UX</0>. Passionné par le maquettage et les fonctionnalités soigneusement designées, j'ai acquis une expertise en <0>React</0> et <0>TypeScript</0>. <1 /><1 /> J'ai pu notamment contribuer à la refonte de la page d'accueil et d'autres pages au design moins actuel, perfectionnant ainsi mon sens du design et mes compétences techniques.",
+  "Showcase.cozette.date": "2022 - 2023",
+  "Showcase.cozette.title": "<0>Cozette</0> - Application mobile",
+  "Showcase.cozette.description": "Cozette est une application mobile cross-plateforme développée en <0>React Native</0> et <0>TypeScript</0>. Elle embarque l'outil <0>Expo</0> pour faciliter le développement et le déploiement. <1 /><1 /> Cozette existe pour changer les habitudes de consommation des habitants de la métropole lilloise. Le but est qu'ils puissent avoir un parcours personnalisé répondant à 100% à leurs goûts, et qu'ils puissent mixer des établissements de restauration (bars, restaurants, etc.) avec des lieux culturels (musées, cinémas, salles de spectacle) pour leur soirée ou leur week-end."
 }

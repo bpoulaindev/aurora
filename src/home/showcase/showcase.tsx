@@ -1,43 +1,41 @@
-import React from "react";
+import React, { useState } from "react";
 import { HorizontalTramlines, VerticalTramlines } from "./tramlines/tramlines";
 import w3d from "../../assets/showcase/w3d.png";
+import cozette from "../../assets/showcase/cozette.png";
+import { ShowcaseItem } from "./shocase_item/showcase_item";
 
 export const Showcase: React.FC = () => {
+  const pictures = [w3d, cozette];
+  const itemKeys = ["w3d", "cozette"];
   return (
     <div className="flex flex-col w-full pb-8 mt-8">
-      <div className="flex items-start justify-between w-full h-full">
-        <VerticalTramlines
-          classes={{
-            container: "mr-4 h-48",
-            line: "h-40",
-          }}
-          direction="right"
-          withCorner
-        />
-        <div className="flex h-full w-full">
-          <div className="flex flex-col items-start w-full">
-            <span className="text-sm md:text-base text-dark-300">
-              Août 2021 - Août 2023
-            </span>
-            <span className="text-lg md:text-xl">
-              <span className="text-indigo-500">WeLoveDevs</span> - Développeur
-              Web
-            </span>
+      {itemKeys.map((itemKey, index) => (
+        <div className="w-full flex flex-col">
+          <div
+            className={`flex items-start justify-between w-full h-full ${
+              index % 2 === 0 ? "flex-row" : "flex-row-reverse"
+            }`}
+          >
+            <VerticalTramlines
+              classes={{
+                container: `${
+                  index % 2 === 0 ? "mr-2 sm:mr-8" : "ml-2 sm:ml-8"
+                } ${index === 0 ? "h-70 sm:h-48" : "h-80 sm:h-52"}`,
+                line: index === 0 ? "h-70 sm:h-48" : "h-80 sm:h-52",
+              }}
+              direction="right"
+              withCorner={index === 0}
+            />
+            <ShowcaseItem
+              image={pictures[index]}
+              className={`${index != 0 && "mt-4"}`}
+              itemKey={itemKey}
+              textPlacement={index % 2 === 0 ? "left" : "right"}
+            />
           </div>
-          <img src={w3d} alt="w3d" className="h-32 w-auto" />
+          <HorizontalTramlines direction={index % 2 === 0 ? "right" : "left"} />
         </div>
-      </div>
-      <HorizontalTramlines />
-      <div className="flex items-start justify-between w-full h-full">
-        <div className="flex flex-col items-center justify-center w-full bg-red-300 rounded-lg h-46 mt-4"></div>
-        <VerticalTramlines
-          classes={{
-            container: "ml-4",
-            line: "h-56",
-          }}
-        />
-      </div>
-      <HorizontalTramlines direction="left" />
+      ))}
     </div>
   );
 };

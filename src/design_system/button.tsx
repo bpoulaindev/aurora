@@ -3,16 +3,26 @@ import React from "react";
 export const Button: React.FC<{
   className?: string;
   children: React.ReactNode;
+  component?: "button" | "a";
+  rel?: string;
+  target?: string;
+  href?: string;
   variant?: "contained" | "soft" | "outlined" | "text";
   color?: "indigo" | "purple" | "green" | "red" | "dark";
   size?: "small" | "regular" | "large";
+  staticSize?: boolean;
   onClick?: () => void;
 }> = ({
   className = "",
   children,
+  component = "button",
+  rel = "",
+  target = "",
+  href = "",
   variant = "contained",
   color = "indigo",
   size = "regular",
+  staticSize = false,
   onClick,
 }) => {
   const colorClasses = {
@@ -63,13 +73,17 @@ export const Button: React.FC<{
     text: `focus:shadow-sm`,
   };
   const staticClasses =
-    "rounded-lg flex items-center h-auto font-semibold focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2";
+    "cursor-pointer rounded-lg flex items-center h-auto font-semibold focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2";
   const sizeClasses = {
     small: "px-1 py-1/2 text-sm",
-    regular: "px-2 py-1 text-base",
-    large: "px-4 py-2 text-lg",
+    regular: staticSize
+      ? "px-2 py-1 text-base"
+      : "sm:px-2 sm:py-1 sm:text-base px-1 py-1/2 text-sm",
+    large: staticSize
+      ? "px-4 py-2 text-lg"
+      : "sm:px-4 sm:py-2 sm:text-lg px-1 py-1/2 text-sm",
   };
-  return (
+  return component === "button" ? (
     <button
       type="button"
       onClick={onClick}
@@ -77,5 +91,15 @@ export const Button: React.FC<{
     >
       {children}
     </button>
+  ) : (
+    <a
+      onClick={onClick}
+      rel={rel}
+      href={href}
+      target={target}
+      className={`${className} ${staticClasses} ${colorClasses[color].global} ${colorClasses[color][variant]} ${sizeClasses[size]} ${variants[variant]}}`}
+    >
+      {children}
+    </a>
   );
 };

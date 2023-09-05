@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@heroicons/react": "^2.0.17",
+    "@react-pdf/renderer": "^3.1.12",
     "i18next": "^23.4.2",
     "i18next-browser-languagedetector": "^7.1.0",
     "i18next-http-backend": "^2.2.1",

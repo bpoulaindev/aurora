@@ -7,6 +7,7 @@ import UK from "../../assets/uk.svg";
 import { LanguageContext } from "../../hooks/languageContext";
 import Cookies from "js-cookie";
 import { Trans, useTranslation } from "react-i18next";
+import pdf from "../../assets/bpoulain_resume_minimized.pdf";
 
 export const Navbar: React.FC<{ className?: string }> = ({ className }) => {
   const { language, setLanguage } = useContext(LanguageContext);
@@ -38,11 +39,11 @@ export const Navbar: React.FC<{ className?: string }> = ({ className }) => {
   }, [setLanguage]);
   return (
     <div
-      className={`${className} flex w-full justify-between items-center h-10 bg-cream border-b-2 border-dark-300 px-4 py-2`}
+      className={`${className} flex w-full justify-between items-center h-10 bg-cream border-b-2 border-dark-300 px-2 sm:px-4 py-2`}
     >
       <div className="flex items-center">
-        <AuroraLogo className="h-6 w-6 ml-4" />
-        <span className="text-2xl ml-2 text-dark-300 font-semibold">
+        <AuroraLogo className="h-4 w-4 sm:h-6 sm:w-6 sm:ml-4" />
+        <span className="text-lg sm:text-2xl ml-1 sm:ml-2 text-dark-300 font-semibold">
           Baptiste Poulain
         </span>
       </div>
@@ -51,16 +52,27 @@ export const Navbar: React.FC<{ className?: string }> = ({ className }) => {
         <Button
           color="indigo"
           variant="text"
-          className="!p-1 mr-2"
+          className="!p-1 mr-1 sm:mr-2"
           onClick={changeLanguage}
         >
           {language === "en" ? (
-            <img src={France} alt="france" className="h-3 w-3" />
+            <img
+              src={France}
+              alt="france"
+              className="h-2.5 w-2.5 sm:h-3 sm:w-3"
+            />
           ) : (
-            <img src={UK} alt="france" className="h-3 w-3" />
+            <img src={UK} alt="france" className="h-2.5 w-2.5 sm:h-3 sm:w-3" />
           )}
         </Button>
-        <Button color="indigo" variant="soft">
+        <Button
+          component="a"
+          target="_blank"
+          href={pdf}
+          rel="noopener noreferrer"
+          color="indigo"
+          variant="soft"
+        >
           <Trans i18nKey="Navbar.resume" />
           <ArrowTopRightOnSquareIcon className="h-2 w-2 ml-1" />
         </Button>
