@@ -1,6 +1,8 @@
 import React from "react";
 
 export const VerticalTramlines: React.FC<{
+  ref?: any;
+  style?: any;
   classes?: {
     container?: string;
     corner?: string;
@@ -8,9 +10,13 @@ export const VerticalTramlines: React.FC<{
   };
   direction?: "left" | "right";
   withCorner?: boolean;
-}> = ({ classes, direction, withCorner = false }) => {
+}> = ({ ref, style, classes, direction, withCorner = false }) => {
   return (
-    <div className={`flex flex-col h-full ${classes?.container}`}>
+    <div
+      ref={ref}
+      className={`flex flex-col h-full ${classes?.container}`}
+      style={style}
+    >
       {withCorner && (
         <div
           className={`w-2 h-2 sm:w-4 sm:h-4 bg-transparent border-[2px] border-indigo-300 min-w-[16px] sm:min-w-[32px] ${
