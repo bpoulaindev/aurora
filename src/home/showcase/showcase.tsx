@@ -3,10 +3,11 @@ import { HorizontalTramlines, VerticalTramlines } from "./tramlines/tramlines";
 import w3d from "../../assets/showcase/w3d.png";
 import cozette from "../../assets/showcase/cozette.png";
 import willemse from "../../assets/showcase/willemse.png";
+import convertissol from "../../assets/showcase/convertissol.png";
 import { ShowcaseItem } from "./shocase_item/showcase_item";
 export const Showcase: React.FC = () => {
-  const pictures = [w3d, cozette, willemse];
-  const itemKeys = ["w3d", "cozette", "willemse"];
+  const pictures = [w3d, cozette, convertissol, willemse];
+  const itemKeys = ["w3d", "cozette", "convertissol", "willemse"];
   return (
     <div className="flex flex-col w-full pb-8 mt-8">
       {itemKeys.map((itemKey, index) => (

@@ -14,7 +14,7 @@ export const VerticalTramlines: React.FC<{
   return (
     <div
       ref={ref}
-      className={`flex flex-col h-full ${classes?.container}`}
+      className={`flex flex-col ${classes?.container}`}
       style={style}
     >
       {withCorner && (
